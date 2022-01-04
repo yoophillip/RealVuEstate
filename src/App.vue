@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <div>
-      <h4>XX OneRoom</h4>
-      <p>{{ price1 }} Dollar</p>
+    <div class="menu">
+      <a v-for="item in menu" :key="item">{{ item }}</a>
+    </div>
+    <div v-for="item in products" :key="item">
+      {{ item }}
     </div>
     <div>
-      <h4>XX OneRoom</h4>
-      <p>{{ price2 }} Dollar</p>
+      <h4>{{ products[1] }}</h4>
+      <p>20 Dollar</p>
+    </div>
+    <div>
+      <h4>{{ products[2] }}</h4>
+      <p>30 Dollar</p>
     </div>
   </div>
 </template>
@@ -17,8 +22,10 @@ export default {
   name: "App",
   data() {
     return {
-      price1: 60,
+      price1: 10,
       price2: 70,
+      products: ["NYC", "Chicago", "LA"],
+      menu: ["Home", "Shop", "About"],
     };
   },
   components: {},
@@ -32,6 +39,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.menu {
+  background: darkslateblue;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.menu a {
+  color: white;
+  padding: 10px;
 }
 </style>
