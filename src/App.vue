@@ -3,16 +3,25 @@
     <div class="menu">
       <a v-for="item in menu" :key="item">{{ item }}</a>
     </div>
-    <div v-for="item in products" :key="item">
-      {{ item }}
+    <div>
+      <h4 class="red" style="color: red">{{ products[0] }}</h4>
+      <p>10 Dollar</p>
+      <button @click="reportCount = reportCount[0] + 1">
+        False Listing Report
+      </button>
+      <span>Report Count : {{ reportCount[0] }} </span>
     </div>
     <div>
       <h4>{{ products[1] }}</h4>
       <p>20 Dollar</p>
+      <button @click="increase">False Listing Report</button>
+      <span>Report Count : {{ reportCount[1] }} </span>
     </div>
     <div>
       <h4>{{ products[2] }}</h4>
       <p>30 Dollar</p>
+      <button @click="increase">False Listing Report</button>
+      <span>Report Count : {{ reportCount[2] }} </span>
     </div>
   </div>
 </template>
@@ -26,8 +35,14 @@ export default {
       price2: 70,
       products: ["NYC", "Chicago", "LA"],
       menu: ["Home", "Shop", "About"],
+      reportCount: [0, 0, 0],
     };
   },
+  // methods: {
+  //   increase() {
+  //     this.reportCount++;
+  //   },
+  // },
   components: {},
 };
 </script>
