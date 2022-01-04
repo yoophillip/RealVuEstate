@@ -1,6 +1,6 @@
 # RealVuEstate
 
-## Project setup
+### Project setup
 ```
 npm i
 ```
